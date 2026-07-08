@@ -77,7 +77,16 @@ print(decision.model.value, decision.reason)
 ## Develop
 
 ```bash
-uv venv && uv pip install -e ".[dev,llm]"
+make install   # uv sync with dev + llm extras
+make check     # lint + type check + tests (the full local gate)
+make fix       # auto-fix lint and format
+make help      # list all targets
+```
+
+Or drive the tools directly:
+
+```bash
+uv sync --extra dev --extra llm
 uv run ruff check . && uv run ruff format --check .
 uv run mypy
 uv run pytest
