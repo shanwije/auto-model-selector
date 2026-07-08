@@ -20,9 +20,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
 
       - name: Install project
-        run: |
-          uv venv
-          uv pip install -e ".[dev,llm]"
+        run: uv sync --extra dev --extra llm
 
       - name: Lint
         run: |
