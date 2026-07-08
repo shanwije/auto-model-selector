@@ -1,0 +1,22 @@
+{
+  "name": "auto-model-selector",
+  "displayName": "Auto Model Selector",
+  "version": "0.1.0",
+  "description": "Advisory, non-blocking hook that recommends the cheapest capable Claude model (Haiku/Sonnet/Opus) for each task.",
+  "author": {
+    "name": "shanwije",
+    "email": "shan.in.wije@gmail.com",
+    "url": "https://github.com/shanwije"
+  },
+  "homepage": "https://github.com/shanwije/auto-model-selector#readme",
+  "repository": "https://github.com/shanwije/auto-model-selector",
+  "license": "MIT",
+  "keywords": [
+    "model-routing",
+    "model-selection",
+    "hooks",
+    "claude-code",
+    "cost-optimization"
+  ],
+  "hooks": "./hooks/hooks.json"
+}

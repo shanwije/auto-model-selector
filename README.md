@@ -18,7 +18,21 @@ Ships two things that share one classifier:
 
 The hook is **fail-open and non-blocking by design**: it never emits `decision: "block"`, always exits `0`, and swallows any internal error. It is safe under autonomous / auto-accept mode.
 
-## Install
+## Install as a Claude Code plugin (recommended)
+
+This repo is also a Claude Code plugin marketplace. From inside Claude Code:
+
+```
+/plugin marketplace add shanwije/auto-model-selector
+/plugin install auto-model-selector@auto-model-selector
+```
+
+That wires up the advisory `UserPromptSubmit` hook automatically. The hook runs
+**stdlib-only** from the bundled source — no `pip`/`uv` step, just a Python 3.11+
+interpreter on `PATH`. (Set `AMS_HOOK_USE_LLM=1` to enable the optional Haiku
+tie-breaker, which additionally needs the `anthropic` package.)
+
+## Install as a Python package (for the `route` CLI)
 
 ```bash
 uv tool install auto-model-selector          # or: pipx install auto-model-selector
